@@ -2,46 +2,10 @@ import Link from "next/link"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Hash, Network } from "lucide-react"
+import { getAllImprints } from "@/lib/data/imprints"
 
 export default function Home() {
-  const imprints = [
-    {
-      slug: "float-dispatch",
-      title: "FLOAT.dispatch",
-      description: "Zine-inspired digital artifacts from the FLOAT ecosystem",
-      coverImage: "/placeholder.svg?height=200&width=400",
-      color: "#00ff9f",
-      latestIssue: "issue-1",
-      tags: ["float", "dispatch", "zine-system"],
-    },
-    {
-      slug: "oracle-crosstalk",
-      title: "Oracle Crosstalk",
-      description: "Cross-model AI prompting and slutprint leaks",
-      coverImage: "/placeholder.svg?height=200&width=400",
-      color: "#ff0066",
-      latestIssue: "issue-1",
-      tags: ["float", "oracle-crosstalk", "slutprints"],
-    },
-    {
-      slug: "techcraft",
-      title: "TECHCRAFT",
-      description: "Technical deep dives and system architecture",
-      coverImage: "/placeholder.svg?height=200&width=400",
-      color: "#4A90E2",
-      latestIssue: "issue-1",
-      tags: ["float", "techcraft", "architecture"],
-    },
-    {
-      slug: "resistance",
-      title: "Resistance to Premature Coherence",
-      description: "Neuroqueer cognitive patterns and container systems",
-      coverImage: "/placeholder.svg?height=200&width=400",
-      color: "#8b00ff",
-      latestIssue: "issue-1",
-      tags: ["float", "premature-coherence-resistance", "neuroqueer-cognition"],
-    },
-  ]
+  const imprints = getAllImprints()
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-[#f5f5f5] p-4 md:p-8">
